@@ -24,7 +24,7 @@ class Bot(Client):
             api_hash=Config.API_HASH,
             bot_token=Config.TOKEN,
             workers=200,
-            plugins={"root": "HACKSESSIONBOT"},
+            plugins={"root": "HACKSESSIONBOT/modules"},
             sleep_threshold=15,
         )
 
