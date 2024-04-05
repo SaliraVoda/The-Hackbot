@@ -14,6 +14,6 @@ sᴜᴘᴘᴏʀᴛs ʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏ
 
 ## Thanks To 🙏:
 [steve](https://t.me/STEVE_ROGERS_21) <br>
-[Heroku Deploy]([http://t.me/Tech_Division](https://heroku.com/deploy?template=https://github.com/ALMIGHTY-XD/The-Hackbot/))
+[Heroku Deploy](https://heroku.com/deploy?template=https://github.com/ALMIGHTY-XD/The-Hackbot/))
 ---
 
