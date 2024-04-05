@@ -1,9 +1,9 @@
 {
-    "name": "Porn---TG",
-    "description": "Telegram Bot to download Porn videos & mega files through links",
+    "name": "The-Hackbot",
+    "description": "Hackbot for both Pyrogram and Telethon",
     "logo": "https://telegra.ph/file/7b2f260b267b8487f39f4.mp4",
-    "keywords": ["Porn-Mega-Downloader-TG", "Mongo DB"],    
-    "repository": "https://github.com/SaliraVoda/Pompom",
+    "keywords": ["Telegram-Hackbot", "Hackbot"],    
+    "repository": "https://github.com/Almighty-xd/The-Hackbot",
     "success_url": "",
     "stack": "container",
     "env": {
