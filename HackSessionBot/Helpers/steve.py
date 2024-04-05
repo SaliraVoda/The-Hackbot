@@ -30,8 +30,7 @@ async def user_info(session):
                 msg = info.format((k.first_name if k.first_name else k.last_name),k.id,k.phone,k.username)
                 await steve.disconnect()
             except Exception as e:
-                print(e)
-                             
+                print(e)                             
     else:    
          async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
             try:
