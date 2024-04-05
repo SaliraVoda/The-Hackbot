@@ -17,33 +17,13 @@
             "value": "",
             "required": true 
         },
-        "FORCE_SUB": {
-            "description":  "ID of a Channel which you want to do Force Sub to use the bot. Example: -1001981748188",
-            "value": "",
-            "required": true 
-        },
-        "BOT_TOKEN": {
+        "TOKEN": {
             "description": "Your Bot Token From @BotFather",
             "value": "",
             "required": true 
         },
-        "BOT_USERNAME": {
-            "description": "Your Bot Username From @BotFather",
-            "value": "",
-            "required": true 
-        },
-        "ADMIN": {
+        "CHAT": {
             "description":"Add Your User ID multiple is use space to split",
-            "value": "",
-            "required": true 
-        },
-        "LOG_CHANNEL": {
-            "description":"Bot Log Sending Channel (just create a private channel and add bot to admin and take channel id to add this variable) ⚠️ id startswith -100 must",
-            "value": "",
-            "required": true           
-        },
-        "DB_URL": {
-            "description": "Your Mongo DB URL Obtained From mongodb.com",
             "value": "",
             "required": true 
         },
