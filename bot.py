@@ -4,10 +4,10 @@ from pyrogram import Client
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from config import Config
-from aiohttp import web
+#from aiohttp import web
 from pytz import timezone
 from datetime import datetime
-from plugins.web_support import web_server
+#from plugins.web_support import web_server
 import pyromod
 
 logging.config.fileConfig('logging.conf')
@@ -24,7 +24,7 @@ class Bot(Client):
             api_hash=Config.API_HASH,
             token=Config.TOKEN,
             workers=200,
-            plugins={"root": "plugins"},
+            plugins={"root": "HACKSESSIONBOT"},
             sleep_threshold=15,
         )
 
