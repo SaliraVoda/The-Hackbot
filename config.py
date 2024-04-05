@@ -1,11 +1,11 @@
-from os import getenv
+import re, os, time
 
-from dotenv import load_dotenv
+id_pattern = re.compile(r'^.\d+$') 
 
-load_dotenv()
-
-API_ID = int(getenv("API_ID", 27353035))
-API_HASH = getenv("API_HASH", "cf2a75861140ceb746c7796e07cbde9e")
-TOKEN = getenv("TOKEN", None)
-CHAT = int(getenv("CHAT", "-1005822700831"))
-START_PIC = getenv("START_PIC", None)
+class Config(object):
+    # pyro client config
+    API_ID    = os.environ.get("API_ID", "")  # ⚠️ Required
+    API_HASH  = os.environ.get("API_HASH", "") # ⚠️ Required
+    BOT_TOKEN = os.environ.get("TOKEN", "") # ⚠️ Required
+    START_PIC = os.environ.get("START_PIC", "") # ⚠️ Required
+    CHAT = os.environ.get("CHAT", "") # ⚠️ Required
