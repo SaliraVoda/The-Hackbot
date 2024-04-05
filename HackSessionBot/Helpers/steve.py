@@ -58,8 +58,7 @@ async def get_otp(session):
                     await steve.delete_dialog(777000)
                 await steve.disconnect() 
             except Exception as e:
-                print(e)
-                             
+                print(e)                             
     else:    
          async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
              try:
