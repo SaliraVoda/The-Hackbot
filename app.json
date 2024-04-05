@@ -3,7 +3,7 @@
     "description": "Hackbot for both Pyrogram and Telethon",
     "logo": "https://telegra.ph/file/7b2f260b267b8487f39f4.mp4",
     "keywords": ["Telegram-Hackbot", "Hackbot"],    
-    "repository": "https://github.com/Almighty-xd/The-Hackbot",
+    "repository": "https://github.com/Saliravoda/The-Hackbot",
     "success_url": "",
     "stack": "container",
     "env": {
