@@ -1,12 +1,12 @@
-FROM python:3.10.6
+FROM python:latest
 
-WORKDIR /app
+RUN apt-get update -y && apt-get upgrade -y
+
+RUN pip3 install -U pip
+
 COPY . /app/
+WORKDIR /app/
+RUN pip3 install --upgrade pip
+RUN pip3 install -U -r requirements.txt
 
-# Install required dependencies, upgrade pip, and install ffmpeg
-RUN apt-get update && \
-    apt-get install -y ffmpeg && \
-    pip install --upgrade pip && \
-    pip install -r requirements.txt
-
-CMD ["bash", "run.sh"]
+CMD bash start
