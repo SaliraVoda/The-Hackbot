@@ -22,7 +22,7 @@ class Bot(Client):
             name="Almighty",
             api_id=Config.API_ID,
             api_hash=Config.API_HASH,
-            token=Config.TOKEN,
+            bot_token=Config.TOKEN,
             workers=200,
             plugins={"root": "HACKSESSIONBOT"},
             sleep_threshold=15,
