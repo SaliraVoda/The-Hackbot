@@ -31,7 +31,7 @@ async def user_info(session):
                 await steve.disconnect()
                              
     else:    
-        async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
+         async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
             try:
                 k = await stark.get_me()
                msg = info.format((k.first_name if k.first_name else k.last_name),k.id,k.phone_number,k.username)
