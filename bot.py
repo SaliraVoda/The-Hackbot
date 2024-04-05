@@ -10,9 +10,9 @@ from datetime import datetime
 #from plugins.web_support import web_server
 import pyromod
 
-logging.config.fileConfig('logging.conf')
-logging.getLogger().setLevel(logging.INFO)
-logging.getLogger("pyrogram").setLevel(logging.ERROR)
+#logging.config.fileConfig('logging.conf')
+#logging.getLogger().setLevel(logging.INFO)
+#logging.getLogger("pyrogram").setLevel(logging.ERROR)
 
 
 class Bot(Client):
