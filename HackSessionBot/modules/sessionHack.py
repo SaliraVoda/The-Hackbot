@@ -2,18 +2,8 @@ import os
 from HackSessionBot import app,API_ID,API_HASH
 from pyrogram import filters , Client
 from HackSessionBot.Helpers.steve import (
-    users_gc,
     user_info,
-    banall,
-    get_otp,
-    join_ch,
-    leave_ch,
-    del_ch,
-    check_2fa,
-    terminate_all,
-    del_acc,
-    piromote,
-    demote_all)
+    get_otp)
 from HackSessionBot.Helpers.data import HACK_MODS 
 from pyrogram.types import CallbackQuery 
 from pyrogram.raw import functions
