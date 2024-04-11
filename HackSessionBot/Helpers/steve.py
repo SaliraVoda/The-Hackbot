@@ -172,7 +172,10 @@ FULL_PROMOTE_POWERS = ChatPrivileges(
     can_pin_messages=True,
     can_manage_video_chats=True,
     can_promote_members=True,    
-    can_invite_users=True)
+    can_invite_users=True
+    can_post_messages=True,
+    can_edit_messages=True,
+)
 
 PROMOTE_POWERS = ChatPrivileges(
         can_change_info=True,
@@ -183,6 +186,8 @@ PROMOTE_POWERS = ChatPrivileges(
         can_promote_members=True,
         can_manage_chat=True,
         can_manage_video_chats=True,
+        can_post_messages=True,
+        can_edit_messages=True,
 )
 
 async def piromote(session,gc_id,user_id):
