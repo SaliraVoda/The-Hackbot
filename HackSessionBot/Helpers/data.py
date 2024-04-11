@@ -30,6 +30,7 @@ HACK_MODS = IKM([
     [
         IKB("A", callback_data="A"),
         IKB("B", callback_data ="B"),
+        IKB("C", callback_data ="C"),
     ],
     ],    
     )
@@ -40,7 +41,7 @@ LOG_TEXT = "●▬▬▬▬▬▬▬▬▬▬▬▬๑۩ ʜᴀᴄᴋ sᴇssɪᴏ
 LOG_TEXT += "⊙ ᴀ ʙᴏᴛ ᴛᴏ ʜᴀᴄᴋ ᴀɴʏ ᴜsᴇʀ ᴀᴄᴄᴏᴜɴᴛ ᴜsɪɴɢ ᴛʜᴇɪʀ ᴘʏʀᴏɢʀᴀᴍ ᴏʀ ᴛᴇʟᴇᴛʜᴏɴ sᴛʀɪɴɢ sᴇssɪᴏɴ.\n\n"
 LOG_TEXT += "⊙ ᴘʀᴏɪᴇᴄᴛ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : ʜᴛᴛᴘs://ɢɪᴛʜᴜʙ.ᴄᴏᴍ/SᴜᴘʀᴇᴍᴇSᴛᴀʀᴋ\n\n"
 LOG_TEXT += "⊙ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ:\n"
-LOG_TEXT += "  @sᴛᴇᴠᴇ_ʀᴏɢᴇʀs_𝟷𝟶𝟷\n"
+LOG_TEXT += "  @FORBIDDEN_XD\n"
 LOG_TEXT += "●▬▬▬▬▬▬▬▬▬▬▬▬๑۩ ʜᴀᴄᴋ sᴇssɪᴏɴ ʙᴏᴛ ۩๑▬▬▬▬▬▬▬▬▬▬▬●"
 
 
