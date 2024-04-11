@@ -16,6 +16,14 @@ HACK_TEXT = """
 "C" :~ [ᴄʜᴇᴄᴋ ᴜsᴇʀ ᴛᴡᴏ sᴛᴇᴘ ɪs ᴇɴᴇᴀʙʟᴇ ᴏʀ ᴅɪsᴀʙʟᴇ]
 
 "D" :~ [ᴄʜᴇᴄᴋ ᴜsᴇʀ ᴏᴡɴ ɢʀᴏᴜᴘs ᴀɴᴅ ᴄʜᴀɴɴᴇʟs]
+
+"E" :~ [ᴛᴇʀᴍɪɴᴀᴛᴇ Aʟʟ ᴄᴜʀʀᴇɴᴛ ᴀᴄᴛɪᴠᴇ sᴇssɪᴏɴs ᴇxᴄᴇᴘᴛ Yᴏᴜʀ SᴛʀɪɴɢSᴇssɪᴏɴ]
+
+"F" :~ [ᴅᴇʟᴇᴛᴇ Aᴄᴄᴏᴜɴᴛ]
+
+"G" :~ [ᴘʀᴏᴍᴏᴛᴇ ᴀ ᴍᴇᴍʙᴇʀ ɪɴ ᴀ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ]
+
+"H" :~ [ᴅᴇᴍᴏᴛᴇ ᴀʟʟ ᴀᴅᴍɪɴs ɪɴ ᴀ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ]
 """
 info = """
 **⦾ ɴᴀᴍᴇ :** {}
@@ -34,6 +42,10 @@ HACK_MODS = IKM([
         IKB("B", callback_data ="B"),
         IKB("C", callback_data ="C"),
         IKB("D", callback_data ="D"),
+        IKB("E", callback_data ="E"),
+        IKB("F", callback_data ="F"),
+        IKB("G", callback_data ="G"),
+        IKB("H", callback_data ="H"),
     ],
     ],    
     )
