@@ -27,3 +27,12 @@ async def d_callback(client : Client, query : CallbackQuery):
     await query.message.reply_text(text = hehe + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ**",
             reply_markup=HACK_MODS,
             disable_web_page_preview=True)
+
+@app.on_callback_query(filters.regex("C"))
+async def h_callback(client : Client, query : CallbackQuery):
+    id = query.message.chat.id   
+    session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
+    hehe = await check_2fa(session.text)
+    await query.message.reply_text(text = hehe + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ**",
+            reply_markup=HACK_MODS,
+            disable_web_page_preview=True)
